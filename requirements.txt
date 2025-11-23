@@ -1,6 +1,2 @@
-<<<<<<< HEAD:EMI Calculator/requirements.txt
 matplotlib
-=======
-matplotlib
->>>>>>> bcbe3dabd8bf81c46fbc8482a441dbc8a3cde786:requirements.txt
 streamlit
