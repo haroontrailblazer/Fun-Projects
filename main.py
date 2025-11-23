@@ -53,7 +53,7 @@ if not st.session_state.show_form:
 
     with st.form("emi_form"):
         P1=st.number_input(label="Principal Amount",min_value=0,placeholder="Enter Loan Amount",label_visibility="visible")
-        R1=st.number_input(label="Annual Interest Rate (%)",min_value=0,placeholder="Enter Annual Interest Rate",label_visibility="visible")
+        R1=st.number_input(label="Annual Interest Rate (%)",min_value=0.0,placeholder="Enter Annual Interest Rate",label_visibility="visible")
         T1=st.number_input(label="Loan Duration (Months)",min_value=1,placeholder="Enter Duration in Months",label_visibility="visible")
         submitted = st.form_submit_button("Calculate EMI",use_container_width=True)
         st.autorefresh=True
@@ -93,3 +93,4 @@ else:
         st.session_state.show_form = False
 
         st.rerun()
+
