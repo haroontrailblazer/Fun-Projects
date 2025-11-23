@@ -12,14 +12,15 @@ def plot(P,R,T):
     mp.style.use('dark_background')
     calculate = calculateEMI(P,R,T)
     sizes = [P, calculate[3]*T, calculate[0]] if T!=0 and P!=0 else [10,10,10]
-    labels = [f'Principal - ₹{sizes[0]}', f'Interest - ₹{sizes[1]:.2f}',f'Monthly Payment - ₹{sizes[2]:.2f}'] if T!=0 and P!=0 else ['No Data','No Data','No Data']
+    labels = [f'Principal - ₹{sizes[0]}', f'Total Interest - ₹{sizes[1]:.1f}',f'Monthly Payment - ₹{sizes[2]:.1f}'] if T!=0 and P!=0 else ['No Data','No Data','No Data']
     colors = ['#FFF1C9', '#EA5F89', '#57167E']
+    explode = (0, 0.05, 0.1)
     fig,ax = mp.subplots(figsize=(5,2),dpi=500)
-    ax.pie(sizes,labels=labels,colors=colors,autopct='%1.1f%%',shadow=True,wedgeprops={'linewidth': 1, 'edgecolor': 'black'},textprops={'fontsize': 4, 'color': 'grey', 'weight':'bold','style':'italic', 'family': 'serif',})
+    ax.pie(sizes,labels=labels,colors=colors,autopct='%1.1f%%',shadow=True,explode=explode,textprops={'fontsize': 4, 'color': 'grey', 'weight':'bold','style':'italic', 'family': 'serif',})
     st.pyplot(fig)
     
     
-st.set_page_config(page_title="Emilio - Understand Your Interest. Plan Your Payments.", page_icon="https://github.com/haroontrailblazer/haroontrailblazer/blob/main/Project%20Pngs/Emilio.jpg?raw=true", layout="centered")
+st.set_page_config(page_title="Emilio - Understand Your Interest. Plan Your Payments.", page_icon='https://github.com/haroontrailblazer/haroontrailblazer/blob/main/Project%20Pngs/Emilio.jpg?raw=true', layout="centered")
 st.markdown("""
     <style>
         #MainMenu {visibility: hidden;}
